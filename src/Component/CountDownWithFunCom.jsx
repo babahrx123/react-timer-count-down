@@ -14,7 +14,7 @@ const CountDownWithFunCom = () => {
       }, 1000);
       return () => clearInterval(interval);
     }
-  }, [isTimeRunning, seconds]);
+  }, [isTimeRunning, seconds, handleOnChangeSetTimer]);
 
   const handleOnChangeStart = () => {
     setIsTimerRunning("TRun");
