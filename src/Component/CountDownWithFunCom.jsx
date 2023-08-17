@@ -10,7 +10,25 @@ const CountDownWithFunCom = () => {
   useEffect(() => {
     if (isTimeRunning === "TRun") {
       const interval = setInterval(() => {
-        handleOnChangeSetTimer();
+        let tempSeconds = seconds;
+        let tempMinutes = minutes;
+        let tempHours = hours;
+        if (tempSeconds !== 0) {
+          tempSeconds -= 1;
+        } else if (tempMinutes !== 0) {
+          tempMinutes -= 1;
+          tempSeconds = 59;
+        } else if (tempHours !== 0) {
+          tempHours -= 1;
+          tempMinutes = 59;
+          tempSeconds = 59;
+        } else {
+          setIsTimerRunning("Stop");
+        }
+    
+        setSeconds(tempSeconds);
+        setMinutes(tempMinutes);
+        setHours(tempHours);
       }, 1000);
       return () => clearInterval(interval);
     }
@@ -19,27 +37,7 @@ const CountDownWithFunCom = () => {
   const handleOnChangeStart = () => {
     setIsTimerRunning("TRun");
   };
-  const handleOnChangeSetTimer = () => {
-    let tempSeconds = seconds;
-    let tempMinutes = minutes;
-    let tempHours = hours;
-    if (tempSeconds !== 0) {
-      tempSeconds -= 1;
-    } else if (tempMinutes !== 0) {
-      tempMinutes -= 1;
-      tempSeconds = 59;
-    } else if (tempHours !== 0) {
-      tempHours -= 1;
-      tempMinutes = 59;
-      tempSeconds = 59;
-    } else {
-      setIsTimerRunning("Stop");
-    }
-
-    setSeconds(tempSeconds);
-    setMinutes(tempMinutes);
-    setHours(tempHours);
-  };
+  
   const handleOnChangeStop = () => {
     setIsTimerRunning("Stop");
   };
