@@ -32,7 +32,7 @@ const CountDownWithFunCom = () => {
       }, 1000);
       return () => clearInterval(interval);
     }
-  }, [isTimeRunning, seconds]);
+  }, [isTimeRunning, seconds, minutes, hours]);
 
   const handleOnChangeStart = () => {
     setIsTimerRunning("TRun");
