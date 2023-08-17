@@ -23,9 +23,9 @@ const CountDownWithFunCom = () => {
     let tempSeconds = seconds;
     let tempMinutes = minutes;
     let tempHours = hours;
-    if (tempSeconds != 0) {
+    if (tempSeconds !== 0) {
       tempSeconds -= 1;
-    } else if (tempMinutes != 0) {
+    } else if (tempMinutes !== 0) {
       tempMinutes -= 1;
       tempSeconds = 59;
     } else if (tempHours !== 0) {
