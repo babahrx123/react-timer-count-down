@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import CountDown from './Component/CountDown';
+//import CountDown from './Component/CountDown';
 import "./App.css"
 import CountDownWithFunCom from './Component/CountDownWithFunCom';
 class App extends Component {
