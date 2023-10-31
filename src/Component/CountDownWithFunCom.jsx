@@ -62,7 +62,7 @@ const CountDownWithFunCom = () => {
   };
   return (
     <div className="timer">
-      <h2>Count Down</h2>
+      <h2>Count Down React Js Application</h2>
       {isTimeRunning === "SetTime" ? (
         <form onSubmit={handleOnChangeSetTime}>
           <label>Enter number of Seconds to set on CountDown Timer</label>
